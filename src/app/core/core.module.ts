@@ -1,6 +1,11 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select';
 
 
 const CHILD_PROVIDERS = [
@@ -11,10 +16,22 @@ const CHILD_PROVIDERS = [
   declarations: [],
   imports: [
     CommonModule,
-    TranslateModule.forChild()
+    TranslateModule.forChild(),
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSelectModule
   ],
   exports: [
-    TranslateModule
+    TranslateModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSelectModule
   ]
 })
 export class CoreModule {

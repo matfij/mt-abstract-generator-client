@@ -1,5 +1,10 @@
 @import "~normalize.css/normalize.css";
+@import '~@angular/material/theming';
+@import '~bootstrap/scss/bootstrap';
 
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$candy-app-primary: mat-palette($mat-indigo);
+$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);

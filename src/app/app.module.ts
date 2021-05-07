@@ -9,6 +9,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CoreModule } from './core/core.module';
 import { DEFAULT_LANG, AVAILABLE_LANGS } from './core/config';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -31,7 +32,8 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    CoreModule
+    CoreModule,
+    NgbModule
   ],
   exports: [
     TranslateModule
