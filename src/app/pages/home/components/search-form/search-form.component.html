@@ -2,7 +2,7 @@
 
   <div class="form-group">
     <label class="form-text text-muted">{{ 'home.authorizationKey' | translate }}</label>
-    <input type="text" formControlName="key" class="form-control" [disabled]="searchLoading">
+    <input type="text" formControlName="key" class="form-control">
   </div>
 
   <div class="form-group">
@@ -12,7 +12,11 @@
 
   <div class="form-group">
     <label class="form-text text-muted">{{ 'home.numberOfPages' | translate }}</label>
-    <input formControlName="pageNumber" type="range" [min]="minRange" [max]="maxRange" class="form-control-range">
+    <div class="range-group">
+      <input #pageNumber formControlName="pageNumber" type="range" [min]="minRange" [max]="maxRange" class="form-control-range">
+      <h5><span class="badge range-badge">{{ pageNumber.value }}</span></h5>
+    </div>
+    <small class="form-text text-muted">{{ 'home.numberOfPagesHint' | translate }}</small>
   </div>
 
   <div class="form-group mt-4">

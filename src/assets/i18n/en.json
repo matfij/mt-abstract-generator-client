@@ -5,6 +5,16 @@
     "thanks": "Thank you for your help!",
     "copyright": "©2021 Mateusz Fijak"
   },
+  "config": {
+    "answerModelEnum": {
+      "SpanBertSquad": "SpanBERT",
+      "ElectraSquad": "ELECTRA"
+    },
+    "summaryModelEnum": {
+      "DistillBartCnn": "BART (Disilled)",
+      "DistillPegasusCnn": "PEGASUS (Distilled)"
+    }
+  },
   "common": {
     "confirm": "Confirm",
     "yes": "yes",
@@ -14,22 +24,25 @@
     "authorizationKey": "Authorization key *",
     "searchPhrase": "Search phrase *",
     "numberOfPages": "Search scale",
-    "numberOfPagesHint": "Search scale",
+    "numberOfPagesHint": "Number of analyzed websites",
     "advanced": "Advanced",
     "answerModel": "Question Answering model",
     "summaryModel": "Summarization model",
-    "answerModelEnum": {
-      "SpanBertSquad": "SpanBERT",
-      "ElectraSquad": "ELECTRA"
-    },
-    "summaryModelEnum": {
-      "DistillBartCnn": "BART (Disilled)",
-      "DistillPegasusCnn": "PEGASUS (Distilled)"
-    },
     "keyInvalid": "Key invalid",
     "phraseInvalid": "Search phrase invalid",
     "abstractGenerated": "Abstract generated",
-    "keyExpired": "Authorization key expired"
+    "keyExpired": "Authorization key expired",
+    "answer": "Answer",
+    "summary": "Summary",
+    "answerScore": "Answer accuracy *",
+    "answerScoreHint": "0 - completely off-topic, 10 - human-like",
+    "summaryScore": "Sumary accuracy *",
+    "summaryScoreHint": "0 - completely off-topic, 10 - human-like",
+    "timeScore": "Execution time *",
+    "timeScoreHint": "0 - definitelty too long, 10 - lightning fast",
+    "comment": "Comments, remarks",
+    "commentInvalid": "Entered comment is too long",
+    "pollSubmitted": "Questionnaire submitted, thank you!"
   },
   "admin": {
 

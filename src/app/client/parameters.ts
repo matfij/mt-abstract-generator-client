@@ -12,6 +12,7 @@ export interface PollParams {
   phrase: string;
   answer_model: AnswerModel;
   summary_model: SummaryModel;
+  page_number: number;
   answer_score: number;
   summary_score: number;
   time_score: number;

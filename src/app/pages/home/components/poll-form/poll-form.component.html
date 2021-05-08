@@ -1,0 +1,42 @@
+<form [formGroup]="searchForm" (ngSubmit)="submitPoll()">
+
+  <div *ngIf="abstractModel.answer" class="form-group">
+    <label class="form-text text-muted">{{ 'home.answerScore' | translate }}</label>
+    <div class="range-group">
+      <input #answerScore formControlName="answerScore" type="range" [min]="minRange" [max]="maxRange" class="form-control-range">
+      <h5><span class="badge range-badge">{{ answerScore.value }}</span></h5>
+    </div>
+    <small class="form-text text-muted">{{ 'home.answerScoreHint' | translate }}</small>
+  </div>
+
+  <div *ngIf="abstractModel.summary" class="form-group">
+    <label class="form-text text-muted">{{ 'home.summaryScore' | translate }}</label>
+    <div class="range-group">
+      <input #summaryScore formControlName="summaryScore" type="range" [min]="minRange" [max]="maxRange" class="form-control-range">
+      <h5><span class="badge range-badge">{{ summaryScore.value }}</span></h5>
+    </div>
+    <small class="form-text text-muted">{{ 'home.summaryScoreHint' | translate }}</small>
+  </div>
+
+  <div class="form-group">
+    <label class="form-text text-muted">{{ 'home.timeScore' | translate }}</label>
+    <div class="range-group">
+      <input #timeScore formControlName="timeScore" type="range" [min]="minRange" [max]="maxRange" class="form-control-range">
+      <h5><span class="badge range-badge">{{ timeScore.value }}</span></h5>
+    </div>
+    <small class="form-text text-muted">{{ 'home.timeScoreHint' | translate }}</small>
+  </div>
+
+   <div class="form-group">
+    <label class="form-text text-muted">{{ 'home.comment' | translate }}</label>
+    <textarea class="form-control" formControlName="comment" class="form-control"></textarea>
+  </div>
+
+  <div class="spinner-group">
+    <app-spinner *ngIf="pollLoading"></app-spinner>
+    <button *ngIf="!pollLoading" type="submit" class="btn btn-outline-primary btn-block">
+      {{ 'common.confirm' | translate }}
+    </button>
+  </div>
+
+</form>

@@ -4,6 +4,7 @@
     <div class="logo-wrapper">
       <img src="../../../assets/img/logo.png" alt="logo">
     </div>
+
     <div class="title-label">{{ 'app.name' | translate }}</div>
   </div>
 
@@ -16,7 +17,20 @@
     <app-search-form (abstract)="handleAbstract($event)"></app-search-form>
   </div>
 
-  <div *ngIf="pageState === homePageState.PollForm" class="poll-form-wrapper">
+  <div *ngIf="pageState === homePageState.PollForm && abstract" class="form-text text-muted description-label">
+    <div *ngIf="abstract.answer" class="answer-label">
+      <b>{{ 'home.answer' | translate}}:</b>
+      {{ abstract.answer }}
+    </div>
+
+    <div *ngIf="abstract.summary" class="mt-1 summary-label">
+      <b>{{ 'home.summary' | translate}}:</b>
+      {{ abstract.summary }}
+    </div>
+  </div>
+
+  <div *ngIf="pageState === homePageState.PollForm" class="poll-form-wrapper mt-3">
+    <app-poll-form (close)="pageState = homePageState.SearchForm"></app-poll-form>
   </div>
 
 </div>

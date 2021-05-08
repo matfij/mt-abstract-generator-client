@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractModel } from 'src/app/client/models';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   pageState: HomePageState;
+  abstract: AbstractModel;
 
   constructor() {}
 
@@ -17,9 +19,9 @@ export class HomeComponent implements OnInit {
     this.pageState = HomePageState.SearchForm;
   }
 
-  handleAbstract(event: any) {
+  handleAbstract(abstract: AbstractModel) {
+    this.abstract = abstract;
     this.pageState = HomePageState.PollForm;
-    console.log(event);
   }
 
 }
