@@ -6,6 +6,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
+import { SpinnerComponent } from '../components/spinner/spinner.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 
 const CHILD_PROVIDERS = [
@@ -13,7 +15,10 @@ const CHILD_PROVIDERS = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SpinnerComponent,
+    FooterComponent
+  ],
   imports: [
     CommonModule,
     TranslateModule.forChild(),
@@ -31,7 +36,9 @@ const CHILD_PROVIDERS = [
     NgbModule,
     MatSliderModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    SpinnerComponent,
+    FooterComponent
   ]
 })
 export class CoreModule {

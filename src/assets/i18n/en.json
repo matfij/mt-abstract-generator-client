@@ -3,7 +3,7 @@
     "name": "Open Domain Abstract Generator",
     "description": "Open Domain Abstract Generator is the application that I created as part of my master's thesis. Based on the user input it searches the web and generates a knowledge abstract. This process takes between 1 and 5 minutes and depends on the user input data. After the abstract is generated you will be asked to complete the questionnaire on the system's effectiveness.",
     "thanks": "Thank you for your help!",
-    "copyright": "©2021 Mateusz Fijak \n Powered by Google"
+    "copyright": "©2021 Mateusz Fijak"
   },
   "common": {
     "confirm": "Confirm",
@@ -11,8 +11,8 @@
     "no": "no"
   },
   "home": {
-    "authorizationKey": "Authorization key",
-    "searchPhrase": "Search phrase",
+    "authorizationKey": "Authorization key *",
+    "searchPhrase": "Search phrase *",
     "numberOfPages": "Search scale",
     "numberOfPagesHint": "Search scale",
     "advanced": "Advanced",
@@ -25,7 +25,11 @@
     "summaryModelEnum": {
       "DistillBartCnn": "BART (Disilled)",
       "DistillPegasusCnn": "PEGASUS (Distilled)"
-    }
+    },
+    "keyInvalid": "Key invalid",
+    "phraseInvalid": "Search phrase invalid",
+    "abstractGenerated": "Abstract generated",
+    "keyExpired": "Authorization key expired"
   },
   "admin": {
 

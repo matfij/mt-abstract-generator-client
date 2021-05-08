@@ -2,6 +2,8 @@
   width: 90%;
   max-width: 600px;
   margin: 0 auto;
+
+  padding-bottom: 70px;
 }
 
 .header-wrapper {
@@ -32,13 +34,4 @@
 
 .search-form-wrapper {
   margin-top: 20px;
-}
-
-.page-slider {
-  border: none;
-}
-
-mat-form-field {
-  width: 98%;
-  margin: auto 1%;
 }

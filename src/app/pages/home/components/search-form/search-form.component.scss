@@ -1,0 +1,11 @@
+.spinner-group {
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    align-self: flex-end;
+  }
+}

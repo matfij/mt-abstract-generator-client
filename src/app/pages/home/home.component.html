@@ -1,4 +1,5 @@
 <div class="main-wrapper">
+
   <div class="header-wrapper">
     <div class="logo-wrapper">
       <img src="../../../assets/img/logo.png" alt="logo">
@@ -6,61 +7,18 @@
     <div class="title-label">{{ 'app.name' | translate }}</div>
   </div>
 
-  <div class="form-text text-muted description-label">
+  <div *ngIf="pageState === homePageState.SearchForm" class="form-text text-muted description-label">
     {{ 'app.description' | translate }}
     <b>{{ 'app.thanks' | translate }}</b>
   </div>
 
-  <div class="search-form-wrapper mt-4">
-    <form [formGroup]="searchForm">
-
-      <div class="form-group">
-        <label class="form-text text-muted">{{ 'home.authorizationKey' | translate }}</label>
-        <input type="text" formControlName="key" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label class="form-text text-muted">{{ 'home.searchPhrase' | translate }}</label>
-        <input type="text" formControlName="phrase" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label class="form-text text-muted">{{ 'home.numberOfPages' | translate }}</label>
-        <input formControlName="pageNumber" type="range" class="form-control-range">
-      </div>
-
-      <div class="form-group mt-4">
-        <mat-slide-toggle [(ngModel)]="isAdvancedChecked" [ngModelOptions]="{standalone: true}">
-          <label class="form-text text-muted m-2">{{ 'home.advanced' | translate }}</label>
-        </mat-slide-toggle>
-      </div>
-
-      <div *ngIf="isAdvancedChecked" class="row">
-        <div class="form-group col-md-6">
-          <label class="form-text text-muted">{{ 'home.answerModel' | translate }}</label>
-          <select *ngIf="AnswerModelEnum" class="form-control" formControlName="answerModel">
-            <option [value]="AnswerModelEnum[0].value">{{ AnswerModelEnum[0].name }}</option>
-            <option [value]="AnswerModelEnum[1].value">{{ AnswerModelEnum[1].name }}</option>
-          </select>
-        </div>
-
-        <div class="form-group col-md-6">
-          <label class="form-text text-muted">{{ 'home.summaryModel' | translate }}</label>
-          <select class="form-control" formControlName="summaryModel">
-            <option [value]="SummaryModelEnum[0].value">{{ SummaryModelEnum[0].name }}</option>
-            <option [value]="SummaryModelEnum[1].value">{{ SummaryModelEnum[1].name }}</option>
-          </select>
-        </div>
-      </div>
-
-      <button (click)="generateAbstract()" type="button" class="btn btn-outline-primary btn-block mt-5 mb-5">
-        {{ 'common.confirm' | translate }}
-      </button>
-
-   </form>
+  <div *ngIf="pageState === homePageState.SearchForm" class="search-form-wrapper mt-4">
+    <app-search-form (abstract)="handleAbstract($event)"></app-search-form>
   </div>
 
-  <div class="questionnaire-form-wrapper">
+  <div *ngIf="pageState === homePageState.PollForm" class="poll-form-wrapper">
   </div>
 
 </div>
+
+<app-footer></app-footer>

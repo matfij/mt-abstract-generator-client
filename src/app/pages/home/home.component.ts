@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { AnswerModel, SummaryModel } from 'src/app/core/config';
-import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-home',
@@ -10,31 +7,24 @@ import { UtilsService } from 'src/app/services/utils.service';
 })
 export class HomeComponent implements OnInit {
 
-  searchForm = new FormGroup({
-    key: new FormControl(''),
-    phrase: new FormControl(''),
-    pageNumber: new FormControl(''),
-    answerModel: new FormControl(''),
-    summaryModel: new FormControl(''),
-  });
-  isAdvancedChecked: boolean;
+  pageState: HomePageState;
 
-  constructor(
-    private utilsService: UtilsService
-  ) {}
+  constructor() {}
 
-  get AnswerModelEnum() { return this.utilsService.enumToConst(AnswerModel, {namePrepend: 'home.answerModelEnum.'}); }
-  get SummaryModelEnum() { return this.utilsService.enumToConst(SummaryModel, {namePrepend: 'home.summaryModelEnum.'}); }
+  get homePageState() { return HomePageState; }
 
   ngOnInit(): void {
+    this.pageState = HomePageState.SearchForm;
   }
 
-  generateAbstract() {
-    console.log(this.searchForm.controls.key.value)
-    console.log(this.searchForm.controls.phrase.value)
-    console.log(this.searchForm.controls.pageNumber.value)
-    console.log(this.searchForm.controls.answerModel.value)
-    console.log(this.searchForm.controls.summaryModel.value)
+  handleAbstract(event: any) {
+    this.pageState = HomePageState.PollForm;
+    console.log(event);
   }
 
+}
+
+enum HomePageState {
+  SearchForm,
+  PollForm
 }
