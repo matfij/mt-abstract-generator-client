@@ -4,14 +4,5 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://127.0.0.1:8000/api/'
+  baseUrl: 'http://51.140.11.172:8000/api/'
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ApiClientService } from 'src/app/client/api-client.service';
 import { MockClientService } from 'src/app/client/mock-client.service';
 import { AbstractModel, PollModel } from 'src/app/client/models';
 import { GenerateAbstractParams, PollParams } from 'src/app/client/parameters';
@@ -29,7 +30,7 @@ export class PollFormComponent implements OnInit {
   abstractModel: AbstractModel;
 
   constructor(
-    private apiClient: MockClientService,
+    private apiClient: ApiClientService,
     private utilsService: UtilsService,
     private storeService: StoreService
   ) {}
@@ -96,6 +97,7 @@ export class PollFormComponent implements OnInit {
       this.finishLoading();
     }, error => {
       this.utilsService.presentToast('home.keyExpired');
+      console.log(error);
       this.finishLoading();
     });
   }

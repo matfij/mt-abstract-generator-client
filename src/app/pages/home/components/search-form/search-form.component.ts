@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ApiClientService } from 'src/app/client/api-client.service';
 import { MockClientService } from 'src/app/client/mock-client.service';
 import { AbstractModel } from 'src/app/client/models';
 import { GenerateAbstractParams } from 'src/app/client/parameters';
@@ -33,7 +34,7 @@ export class SearchFormComponent implements OnInit {
   searchLoading: boolean;
 
   constructor(
-    private apiClient: MockClientService,
+    private apiClient: ApiClientService,
     private utilsService: UtilsService,
     private storeService: StoreService
   ) {}
@@ -93,6 +94,7 @@ export class SearchFormComponent implements OnInit {
       this.finishLoading();
     }, error => {
       this.utilsService.presentToast('home.keyExpired');
+      console.log(error);
       this.finishLoading();
     });
   }

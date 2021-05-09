@@ -28,7 +28,7 @@
     "advanced": "Advanced",
     "answerModel": "Question Answering model",
     "summaryModel": "Summarization model",
-    "keyInvalid": "Key invalid",
+    "keyInvalid": "Authorization key invalid",
     "phraseInvalid": "Search phrase invalid",
     "abstractGenerated": "Abstract generated",
     "keyExpired": "Authorization key expired",
