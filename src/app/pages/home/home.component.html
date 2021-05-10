@@ -18,13 +18,17 @@
   </div>
 
   <div *ngIf="pageState === homePageState.PollForm && abstract" class="form-text text-muted description-label">
+    <div *ngIf="phrase" class="mt-1 mb-1 text-primary topic-label">
+      {{ ('home.topic' | translate) + ': ' + phrase}}
+    </div>
+
     <div *ngIf="abstract.answer" class="answer-label">
-      <b>{{ 'home.answer' | translate}}:</b>
+      <b>{{ 'home.answer' | translate }}:</b>
       {{ abstract.answer }}
     </div>
 
     <div *ngIf="abstract.summary" class="mt-1 summary-label">
-      <b>{{ 'home.summary' | translate}}:</b>
+      <b>{{ 'home.summary' | translate }}:</b>
       {{ abstract.summary }}
     </div>
   </div>

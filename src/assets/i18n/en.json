@@ -42,7 +42,8 @@
     "timeScoreHint": "0 - definitelty too long, 10 - lightning fast",
     "comment": "Comments, remarks",
     "commentInvalid": "Entered comment is too long",
-    "pollSubmitted": "Questionnaire submitted, thank you!"
+    "pollSubmitted": "Questionnaire submitted, thank you!",
+    "topic": "Topic"
   },
   "admin": {
 
