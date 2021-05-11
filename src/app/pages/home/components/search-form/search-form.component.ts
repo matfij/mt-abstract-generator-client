@@ -1,10 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiClientService } from 'src/app/client/api-client.service';
-import { MockClientService } from 'src/app/client/mock-client.service';
+import { AnswerModel, SummaryModel } from 'src/app/client/constants';
 import { AbstractModel } from 'src/app/client/models';
 import { GenerateAbstractParams } from 'src/app/client/parameters';
-import { AnswerModel, DEFAULT_ANSWER_MODEL, DEFAULT_PAGE_NUMBER, DEFAULT_SUMMARY_MODEL, MAX_KEY_LENGTH, MAX_PAGE_NUMBER, MAX_PHRASE_LENGTH, MIN_KEY_LENGTH, MIN_PAGE_NUMBER, MIN_PHRASE_LENGTH, SummaryModel } from 'src/app/core/config';
+import { DEFAULT_ANSWER_MODEL, DEFAULT_PAGE_NUMBER, DEFAULT_SUMMARY_MODEL, MAX_KEY_LENGTH, MAX_PAGE_NUMBER, MAX_PHRASE_LENGTH, MIN_KEY_LENGTH, MIN_PAGE_NUMBER, MIN_PHRASE_LENGTH } from 'src/app/core/config';
 import { ABSTRACT_MODEL, AUTH_KEY, GENERATE_ABSTRACT_PARAMS, StoreService } from 'src/app/services/store.service';
 import { ToastStatus, UtilsService } from 'src/app/services/utils.service';
 

@@ -1,4 +1,9 @@
-import { AnswerModel, SummaryModel } from "../core/config";
+import { AnswerModel, SummaryModel, TesterClass } from "./constants";
+
+export interface ResponseMessage {
+  status?: number;
+  message?: string;
+}
 
 export interface AbstractModel {
   answer: string;
@@ -18,4 +23,15 @@ export interface PollModel {
   answer: string;
   summary: string
   comment: string;
+}
+
+export interface KeyModel {
+  id: number;
+  key: string;
+  tester_name: string;
+  tester_class: TesterClass;
+  active: boolean;
+  use_count: number;
+  use_limit: number;
+  creation_date: string;
 }

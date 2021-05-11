@@ -1,7 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiClientService } from 'src/app/client/api-client.service';
-import { MockClientService } from 'src/app/client/mock-client.service';
 import { AbstractModel, PollModel } from 'src/app/client/models';
 import { GenerateAbstractParams, PollParams } from 'src/app/client/parameters';
 import { DEFAULT_SCORE, MAX_COMMENT_LENGTH, MAX_SCORE, MIN_SCORE } from 'src/app/core/config';

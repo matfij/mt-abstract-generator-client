@@ -1,3 +1,5 @@
+import { AnswerModel, SummaryModel } from "../client/constants";
+
 /**
  * Internationalization
  */
@@ -16,16 +18,6 @@ export const MAX_PHRASE_LENGTH = 127;
 export const MIN_PAGE_NUMBER = 10;
 export const MAX_PAGE_NUMBER = 50;
 export const DEFAULT_PAGE_NUMBER = 25;
-
-export enum AnswerModel {
-  SpanBertSquad = 1,
-  ElectraSquad = 2
-}
-
-export enum SummaryModel {
-  DistillBartCnn = 1,
-  DistillPegasusCnn = 2
-}
 
 export const DEFAULT_ANSWER_MODEL = AnswerModel.ElectraSquad;
 export const DEFAULT_SUMMARY_MODEL = SummaryModel.DistillBartCnn;

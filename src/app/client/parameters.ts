@@ -1,4 +1,4 @@
-import { AnswerModel, SummaryModel } from "../core/config";
+import { AnswerModel, SummaryModel, TesterClass } from "./constants";
 
 export interface GenerateAbstractParams {
   phrase: string;
@@ -19,4 +19,12 @@ export interface PollParams {
   answer: string;
   summary: string;
   comment: string;
+}
+
+export interface KeyParams {
+  key: string;
+  tester_name: string;
+  tester_class: TesterClass;
+  active: boolean;
+  use_limit?: number;
 }

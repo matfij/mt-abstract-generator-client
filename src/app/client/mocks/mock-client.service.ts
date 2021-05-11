@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { AnswerModel, SummaryModel } from '../core/config';
-import { AbstractModel, PollModel } from './models';
-import { GenerateAbstractParams, PollParams } from './parameters';
+import { AnswerModel, SummaryModel } from '../constants';
+import { AbstractModel, PollModel } from '../models';
+import { GenerateAbstractParams, PollParams } from '../parameters';
 
 @Injectable({
   providedIn: 'root'
