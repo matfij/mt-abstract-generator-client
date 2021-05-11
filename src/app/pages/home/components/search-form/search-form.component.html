@@ -2,12 +2,13 @@
 
   <div class="form-group">
     <label class="form-text text-muted">{{ 'home.authorizationKey' | translate }}</label>
-    <input type="text" formControlName="key" class="form-control">
+    <input type="password" formControlName="key" class="form-control">
   </div>
 
   <div class="form-group">
     <label class="form-text text-muted">{{ 'home.searchPhrase' | translate }}</label>
     <input type="text" formControlName="phrase" class="form-control">
+    <small class="form-text text-muted">{{ 'home.searchPhraseHint' | translate }}</small>
   </div>
 
   <div class="form-group">

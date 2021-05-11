@@ -1,7 +1,7 @@
 {
   "app": {
     "name": "Open Domain Abstract Generator",
-    "description": "Open Domain Abstract Generator is the application that I created as part of my master's thesis. Based on the user input it searches the web and generates a knowledge abstract. This process takes between 1 and 5 minutes and depends on the user input data. After the abstract is generated you will be asked to complete the questionnaire on the system's effectiveness.",
+    "description": "Open Domain Abstract Generator is an application created as part of Mateusz Fijak's master's thesis. Based on the user input it searches the web and generates a knowledge abstract. This process takes between 1 and 5 minutes and depends on the user input data. After the abstract is generated you will be asked to complete the questionnaire on the system's effectiveness.",
     "thanks": "Thank you for your help!",
     "copyright": "©2021 Mateusz Fijak"
   },
@@ -23,6 +23,7 @@
   "home": {
     "authorizationKey": "Authorization key *",
     "searchPhrase": "Search phrase *",
+    "searchPhraseHint": "Must be in English, preferably an open question (e.g. Is coffee healthy?)",
     "numberOfPages": "Search scale",
     "numberOfPagesHint": "Number of analyzed websites",
     "advanced": "Advanced",
@@ -46,6 +47,8 @@
     "topic": "Topic"
   },
   "admin": {
-
+    "appNameAbbreviation": "O.D. A.G.",
+    "keysManagement": "Keys management",
+    "pollsManagement": "Polls management"
   }
 }

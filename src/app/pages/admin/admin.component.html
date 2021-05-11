@@ -1,1 +1,21 @@
-<p>admin works!</p>
+<div *ngIf="pageState === adminPageState.Unauthenticated" class="unauthenticated-wrapper">
+  <app-authentication></app-authentication>
+</div>
+
+<div *ngIf="pageState !== adminPageState.Unauthenticated" class="unauthenticated-wrapper">
+  <app-navbar (pageState)="onPageStateChanges($event)"></app-navbar>
+
+  <div class="main-wrapper">
+
+    <div *ngIf="pageState === adminPageState.KeysManagement" class="keys-management-wrapper">
+      <app-keys-management></app-keys-management>
+    </div>
+
+    <div *ngIf="pageState === adminPageState.PollsManagement" class="polls-management-wrapper">
+      <app-polls-management></app-polls-management>
+    </div>
+
+  </div>
+
+  <app-footer></app-footer>
+</div>

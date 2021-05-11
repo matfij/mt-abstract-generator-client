@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  pageState: AdminPageState;
+
+  constructor() {}
+
+  get adminPageState() { return AdminPageState; }
 
   ngOnInit(): void {
+    this.pageState = AdminPageState.Unauthenticated;
   }
 
+  onPageStateChanges(nextState: AdminPageState) {
+    this.pageState = nextState;
+  }
+
+}
+
+export enum AdminPageState {
+  Unauthenticated,
+  KeysManagement,
+  PollsManagement
 }

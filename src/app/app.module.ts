@@ -10,6 +10,8 @@ import { CoreModule } from './core/core.module';
 import { DEFAULT_LANG, AVAILABLE_LANGS } from './core/config';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -40,7 +42,8 @@ export function createTranslateLoader(http: HttpClient) {
     TranslateModule
   ],
   providers: [
-    HttpClient
+    HttpClient,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })

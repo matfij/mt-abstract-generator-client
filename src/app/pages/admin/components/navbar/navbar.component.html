@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <a class="navbar-brand" href="#">
+    {{ 'admin.appNameAbbreviation' | translate }}
+  </a>
+
+  <div class="collapse navbar-collapse">
+    <div class="navbar-nav">
+
+      <div class="nav-item nav-link" (click)="navigate(adminPageState.KeysManagement)" [ngClass]="{'active' : navbarState === adminPageState.KeysManagement}">
+        {{ 'admin.keysManagement' | translate }}
+      </div>
+
+      <div class="nav-item nav-link" (click)="navigate(adminPageState.PollsManagement)" [ngClass]="{'active' : navbarState === adminPageState.PollsManagement}">
+        {{ 'admin.pollsManagement' | translate }}
+      </div>
+
+    </div>
+  </div>
+
+</nav>
