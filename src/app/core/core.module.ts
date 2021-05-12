@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -8,7 +8,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { SpinnerComponent } from '../components/spinner/spinner.component';
 import { FooterComponent } from '../components/footer/footer.component';
-
+import { AgGridModule } from 'ag-grid-angular';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const CHILD_PROVIDERS = [
   ...TranslateModule.forChild().providers
@@ -19,6 +20,9 @@ const CHILD_PROVIDERS = [
     SpinnerComponent,
     FooterComponent
   ],
+  providers: [
+    DatePipe
+  ],
   imports: [
     CommonModule,
     TranslateModule.forChild(),
@@ -27,7 +31,9 @@ const CHILD_PROVIDERS = [
     NgbModule,
     MatSliderModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    AgGridModule.withComponents([]),
+    MatDialogModule
   ],
   exports: [
     TranslateModule,
@@ -38,7 +44,10 @@ const CHILD_PROVIDERS = [
     MatSlideToggleModule,
     MatSelectModule,
     SpinnerComponent,
-    FooterComponent
+    FooterComponent,
+    AgGridModule,
+    DatePipe,
+    MatDialogModule
   ]
 })
 export class CoreModule {

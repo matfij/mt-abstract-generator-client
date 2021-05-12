@@ -1,5 +1,5 @@
-<div *ngIf="pageState === adminPageState.Unauthenticated" class="unauthenticated-wrapper">
-  <app-authentication></app-authentication>
+<div *ngIf="pageState === adminPageState.Unauthenticated">
+  <app-authentication (authenticated)="onAuthentication()"></app-authentication>
 </div>
 
 <div *ngIf="pageState !== adminPageState.Unauthenticated" class="unauthenticated-wrapper">

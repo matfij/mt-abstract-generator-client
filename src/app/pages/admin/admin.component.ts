@@ -14,7 +14,11 @@ export class AdminComponent implements OnInit {
   get adminPageState() { return AdminPageState; }
 
   ngOnInit(): void {
-    this.pageState = AdminPageState.Unauthenticated;
+    this.pageState = AdminPageState.KeysManagement;
+  }
+
+  onAuthentication() {
+    this.pageState = AdminPageState.KeysManagement;
   }
 
   onPageStateChanges(nextState: AdminPageState) {

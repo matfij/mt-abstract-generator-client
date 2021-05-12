@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 export const AUTH_KEY = 'mtagc-auth-key';
+export const SECRET_KEY = 'mtagc-secret-key';
 export const GENERATE_ABSTRACT_PARAMS = 'mtagc-generate-abstract-params';
 export const ABSTRACT_MODEL = 'mtagc-abstract-model';
 export const POLL_PARAMS = 'mtagc-poll-params';

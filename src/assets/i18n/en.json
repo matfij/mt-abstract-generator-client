@@ -17,8 +17,10 @@
   },
   "common": {
     "confirm": "Confirm",
-    "yes": "yes",
-    "no": "no"
+    "yes": "Yes",
+    "no": "No",
+    "back": "Back",
+    "cancel": "Cancel"
   },
   "home": {
     "authorizationKey": "Authorization key *",
@@ -49,6 +51,30 @@
   "admin": {
     "appNameAbbreviation": "O.D. A.G.",
     "keysManagement": "Keys management",
-    "pollsManagement": "Polls management"
+    "pollsManagement": "Polls management",
+    "superKey": "Super key",
+    "authenticationSuccess": "Welcome, Mateusz Fijak",
+    "authenticationFail": "Super key invalid",
+    "id": "Id",
+    "key": "Key",
+    "active": "Active",
+    "creationDate": "Creation date",
+    "testerName": "Tester name",
+    "testerClass": "Tester class",
+    "useCount": "Use count",
+    "useLimit": "Use limit",
+    "create": "Create",
+    "refresh": "Refresh",
+    "update": "Update",
+    "delete": "Delete",
+    "keyCreated": "Key created",
+    "keyUpdated": "Key updated",
+    "keyDeleted": "Key deleted",
+    "testerNameInvalid": "Tester name invalid",
+    "testerClassEnum": {
+      "Regular": "Regular",
+      "Technical": "Technical",
+      "Expert": "Expert"
+    }
   }
 }

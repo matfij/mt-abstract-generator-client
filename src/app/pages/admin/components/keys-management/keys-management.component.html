@@ -1,1 +1,68 @@
-<p>keys-management works!</p>
+<div class="main-wrapper">
+
+  <div [ngClass]="{'gone': showKeyForm || !rowData || !columnDefs}" class="table-wrapper">
+    <ag-grid-angular
+      #keysTable
+      class="ag-theme-balham keys-table"
+      [rowData]="rowData"
+      [columnDefs]="columnDefs">
+    </ag-grid-angular>
+
+    <div *ngIf="tableLoading" class="mt-3 spinner-wrapper">
+      <app-spinner></app-spinner>
+    </div>
+    <div *ngIf="!tableLoading" class="btns-wrapper">
+      <button (click)="showKeyForm = true" type="button" class="btn btn-outline-success btn-block ml-0">
+        {{ 'admin.create' | translate }}
+      </button>
+      <button (click)="refreshKeys()" type="button" class="btn btn-outline-primary btn-block">
+        {{ 'admin.refresh' | translate }}
+      </button>
+      <button (click)="updateKey()" type="button" class="btn btn-outline-info btn-block">
+        {{ 'admin.update' | translate }}
+      </button>
+      <button (click)="deleteKey()" type="button" class="btn btn-outline-danger btn-block mr-0">
+        {{ 'admin.delete' | translate }}
+      </button>
+    </div>
+  </div>
+
+  <div [ngClass]="{'gone': !showKeyForm}"class="form-wrapper">
+    <form [formGroup]="keyForm" class="key-form">
+      <div class="form-group">
+        <label class="form-text text-muted">{{ 'admin.key' | translate }}</label>
+        <input type="text" formControlName="key" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label class="form-text text-muted">{{ 'admin.testerName' | translate }}</label>
+        <input type="text" formControlName="testerName" class="form-control">
+      </div>
+
+      <div *ngIf="testerClass" class="form-group">
+        <label class="form-text text-muted">{{ 'admin.testerClass' | translate }}</label>
+        <select class="form-control" formControlName="testerClass">
+          <option *ngFor="let item of testerClass" [ngValue]="item.value">{{ item.name }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-text text-muted">{{ 'admin.useLimit' | translate }}</label>
+        <input type="number" formControlName="useLimit" class="form-control">
+      </div>
+    </form>
+
+    <div *ngIf="formLoading" class="mt-5 spinner-wrapper">
+      <app-spinner></app-spinner>
+    </div>
+    <div *ngIf="!formLoading" class="btns-wrapper mt-5">
+      <button (click)="createKey()" type="button" class="btn btn-outline-primary btn-block ml-0">
+        {{ 'admin.create' | translate }}
+      </button>
+      <button (click)="showKeyForm = false" type="button" class="btn btn-outline-danger btn-block mr-0">
+        {{ 'common.cancel' | translate }}
+      </button>
+    </div>
+  </div>
+
+</div>

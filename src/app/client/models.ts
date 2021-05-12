@@ -26,12 +26,12 @@ export interface PollModel {
 }
 
 export interface KeyModel {
-  id: number;
+  id?: number;
   key: string;
   tester_name: string;
-  tester_class: TesterClass;
-  active: boolean;
-  use_count: number;
-  use_limit: number;
-  creation_date: string;
+  tester_class?: TesterClass;
+  active?: boolean;
+  use_count?: number;
+  use_limit?: number;
+  creation_date?: string;
 }

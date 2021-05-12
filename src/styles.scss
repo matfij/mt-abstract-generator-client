@@ -1,7 +1,13 @@
 @import "~normalize.css/normalize.css";
+
 @import '~@angular/material/theming';
+
 @import '~bootstrap/scss/bootstrap';
+
 @import '~ngx-toastr/toastr';
+
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
 
 
 html, body { height: 100%; }
@@ -9,4 +15,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 ::-webkit-scrollbar {
   width: 0px;
+}
+
+button {
+  letter-spacing: 0.5px;
+}
+
+.gone {
+  display: none;
 }

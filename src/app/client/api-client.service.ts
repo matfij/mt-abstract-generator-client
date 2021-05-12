@@ -58,7 +58,7 @@ export class ApiClientService {
     return this.httpClinet.get<KeyModel[]>(url, { headers: {'secret-key': key} });
   }
 
-  editKey(params: KeyModel, key: string): Observable<KeyModel> {
+  updateKey(params: KeyModel, key: string): Observable<KeyModel> {
     const url = this.BASE_URL + 'core/key/' + params.id + '/';
     return this.httpClinet.put<KeyModel>(url, params, { headers: {'secret-key': key} });
   }

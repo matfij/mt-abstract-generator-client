@@ -1,1 +1,20 @@
-<p>authentication works!</p>
+<div class="bg-dark main-wrapper">
+  <div class="form-group key-input-wrapper">
+
+    <label class="text-danger">{{ 'admin.superKey' | translate }}</label>
+    <input #key [disabled]="authLoading" type="password" class="form-control text-danger">
+
+    <button *ngIf="!authLoading" (click)="authenticate(key.value)" class="btn btn-block btn-outline-danger mt-4">
+      {{ 'common.confirm' | translate }}
+    </button>
+
+    <button *ngIf="!authLoading" (click)="goBack()" class="btn btn-block btn-outline-danger mt-4">
+      {{ 'common.back' | translate }}
+    </button>
+
+    <div *ngIf="authLoading" class="spinner-grow text-danger mt-4 center-spinner" role="status">
+      <span class="sr-only"></span>
+    </div>
+
+  </div>
+</div>
