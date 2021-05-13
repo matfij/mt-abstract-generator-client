@@ -11,14 +11,17 @@ export interface AbstractModel {
 }
 
 export interface PollModel {
+  id?: number;
   key: string;
   date: string;
   phrase: string;
   answer_model: AnswerModel;
   summary_model: SummaryModel;
   page_number: number;
-  answer_score: number;
-  summary_score: number;
+  answer_score_logical: number;
+  answer_score_grammatical: number;
+  summary_score_logical: number;
+  summary_score_grammatical: number;
   time_score: number;
   answer: string;
   summary: string
@@ -34,4 +37,12 @@ export interface KeyModel {
   use_count?: number;
   use_limit?: number;
   creation_date?: string;
+}
+
+export interface PollsStatistics {
+  meanPageNumber: number;
+  meanAnswerScoreLogical: number;
+  meanAnswerScoreGrammatical: number;
+  meanSummaryScoreLogical: number;
+  meanSummaryScoreGrammatical: number;
 }

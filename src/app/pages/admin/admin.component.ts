@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  styleUrls: []
 })
 export class AdminComponent implements OnInit {
 
@@ -14,7 +14,7 @@ export class AdminComponent implements OnInit {
   get adminPageState() { return AdminPageState; }
 
   ngOnInit(): void {
-    this.pageState = AdminPageState.KeysManagement;
+    this.pageState = AdminPageState.Unauthenticated;
   }
 
   onAuthentication() {

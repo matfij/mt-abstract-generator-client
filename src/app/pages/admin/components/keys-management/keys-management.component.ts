@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { AgGridAngular } from 'ag-grid-angular';
@@ -15,7 +15,7 @@ import { UtilsService } from 'src/app/services/utils.service';
   templateUrl: './keys-management.component.html',
   styleUrls: ['./keys-management.component.scss']
 })
-export class KeysManagementComponent implements OnInit, AfterViewInit {
+export class KeysManagementComponent implements OnInit {
 
   secretKey: string;
   keys: KeyModel[] = [];
@@ -55,8 +55,22 @@ export class KeysManagementComponent implements OnInit, AfterViewInit {
     this.setupColumns();
   }
 
-  ngAfterViewInit(): void {
-    this.getKeys();
+  setupColumns() {
+    this.columnDefs = [
+      { headerName: 'admin.id', field: 'id', filter: 'agNumberColumnFilter', checkboxSelection: true, width: 100 },
+      { headerName: 'admin.key', field: 'key', editable: true, width: 200 },
+      { headerName: 'admin.active', field: 'active', filter: true, editable: true, width: 100 },
+      { headerName: 'admin.creationDate', field: 'creationDate', filter: 'agDateColumnFilter', width: 150 },
+      { headerName: 'admin.testerName', field: 'testerName', editable: true, width: 200 },
+      { headerName: 'admin.testerClass', field: 'testerClass', filter: true, editable: true, width: 100 },
+      { headerName: 'admin.useCount', field: 'useCount', filter: 'agNumberColumnFilter', width: 100 },
+      { headerName: 'admin.useLimit', field: 'useLimit', filter: 'agNumberColumnFilter', editable: true, width: 100 }
+    ];
+
+    this.columnDefs.forEach(column => {
+      column.headerName = this.translateService.instant(column.headerName);
+      column.sortable = true;
+    });
   }
 
   startTableLoading() {
@@ -92,24 +106,6 @@ export class KeysManagementComponent implements OnInit, AfterViewInit {
       const message = JSON.stringify(error.error)
       this.utilsService.presentToast(message);
       this.stopTableLoading()
-    });
-  }
-
-  setupColumns() {
-    this.columnDefs = [
-      { headerName: 'admin.id', field: 'id', filter: 'agNumberColumnFilter', checkboxSelection: true, width: 100 },
-      { headerName: 'admin.key', field: 'key', editable: true, width: 200 },
-      { headerName: 'admin.active', field: 'active', filter: true, editable: true, width: 100 },
-      { headerName: 'admin.creationDate', field: 'creationDate', filter: 'agDateColumnFilter', width: 150 },
-      { headerName: 'admin.testerName', field: 'testerName', editable: true, width: 200 },
-      { headerName: 'admin.testerClass', field: 'testerClass', filter: true, editable: true, width: 100 },
-      { headerName: 'admin.useCount', field: 'useCount', filter: 'agNumberColumnFilter', width: 100 },
-      { headerName: 'admin.useLimit', field: 'useLimit', filter: 'agNumberColumnFilter', editable: true, width: 100 }
-    ];
-
-    this.columnDefs.forEach(column => {
-      column.headerName = this.translateService.instant(column.headerName);
-      column.sortable = true;
     });
   }
 

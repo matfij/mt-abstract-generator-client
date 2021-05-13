@@ -18,7 +18,7 @@ export const MAX_PHRASE_LENGTH = 127;
 
 export const MIN_PAGE_NUMBER = 10;
 export const MAX_PAGE_NUMBER = 50;
-export const DEFAULT_PAGE_NUMBER = 25;
+export const DEFAULT_PAGE_NUMBER = 30;
 
 export const DEFAULT_ANSWER_MODEL = AnswerModel.ElectraSquad;
 export const DEFAULT_SUMMARY_MODEL = SummaryModel.DistillBartCnn;

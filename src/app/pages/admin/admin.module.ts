@@ -8,6 +8,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { KeysManagementComponent } from './components/keys-management/keys-management.component';
 import { PollsManagementComponent } from './components/polls-management/polls-management.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
+import { PollDetailsModal } from './components/polls-management/modals/details-modal';
+import { PollsStatisticsModal } from './components/polls-management/modals/statistics-modal';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { AuthenticationComponent } from './components/authentication/authenticat
     NavbarComponent,
     KeysManagementComponent,
     PollsManagementComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    PollDetailsModal,
+    PollsStatisticsModal
   ],
   imports: [
     CommonModule,

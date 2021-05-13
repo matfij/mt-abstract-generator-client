@@ -1,1 +1,30 @@
-<p>polls-management works!</p>
+<div class="main-wrapper">
+
+  <div class="table-wrapper">
+    <ag-grid-angular
+      #pollsTable
+      class="ag-theme-balham polls-table"
+      [gridOptions]="tableOptions"
+      [rowData]="rowData"
+      [columnDefs]="columnDefs">
+    </ag-grid-angular>
+  </div>
+
+  <div *ngIf="tableLoading" class="mt-3 spinner-wrapper">
+    <app-spinner></app-spinner>
+  </div>
+  <div *ngIf="!tableLoading" class="btns-wrapper">
+    <button (click)="showDetails()" type="button" class="btn btn-outline-primary btn-block ml-0">
+      {{ 'admin.details' | translate }}
+    </button>
+    <button (click)="getPolls()" type="button" class="btn btn-outline-success btn-block">
+      {{ 'admin.refresh' | translate }}
+    </button>
+    <button (click)="deletePoll()" type="button" class="btn btn-outline-danger btn-block">
+      {{ 'admin.delete' | translate }}
+    </button>
+    <button (click)="calculateStatistics()" type="button" class="btn btn-outline-info btn-block mr-0">
+      {{ 'admin.calculateStatistics' | translate }}
+    </button>
+  </div>
+</div>
