@@ -17,8 +17,10 @@ export class PollFormComponent implements OnInit {
   @Output() close: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   searchForm = new FormGroup({
-    answerScore: new FormControl('', { validators: [Validators.required] }),
-    summaryScore: new FormControl('', { validators: [Validators.required] }),
+    answerScoreLogical: new FormControl('', { validators: [Validators.required] }),
+    answerScoreGrammatical: new FormControl('', { validators: [Validators.required] }),
+    summaryScoreLogical: new FormControl('', { validators: [Validators.required] }),
+    summaryScoreGrammatical: new FormControl('', { validators: [Validators.required] }),
     timeScore: new FormControl('', { validators: [Validators.required] }),
     comment: new FormControl('', { validators: [Validators.maxLength(MAX_COMMENT_LENGTH) ]})
   });
@@ -43,8 +45,10 @@ export class PollFormComponent implements OnInit {
     this.generateAbstractParams = this.storeService.getItem(GENERATE_ABSTRACT_PARAMS);
     this.abstractModel = this.storeService.getItem(ABSTRACT_MODEL);
 
-    this.searchForm.controls.answerScore.setValue(DEFAULT_SCORE);
-    this.searchForm.controls.summaryScore.setValue(DEFAULT_SCORE);
+    this.searchForm.controls.answerScoreLogical.setValue(DEFAULT_SCORE);
+    this.searchForm.controls.answerScoreGrammatical.setValue(DEFAULT_SCORE);
+    this.searchForm.controls.summaryScoreLogical.setValue(DEFAULT_SCORE);
+    this.searchForm.controls.summaryScoreGrammatical.setValue(DEFAULT_SCORE);
     this.searchForm.controls.timeScore.setValue(DEFAULT_SCORE);
   }
 
@@ -80,8 +84,10 @@ export class PollFormComponent implements OnInit {
       answer_model: this.generateAbstractParams.answer_model,
       summary_model: this.generateAbstractParams.summary_model,
       page_number: this.generateAbstractParams.page_number,
-      answer_score: this.searchForm.controls.answerScore.value,
-      summary_score: this.searchForm.controls.summaryScore.value,
+      answer_score_logical: this.searchForm.controls.answerScoreLogical.value,
+      answer_score_grammatical: this.searchForm.controls.answerScoreGrammatical.value,
+      summary_score_logical: this.searchForm.controls.summaryScoreLogical.value,
+      summary_score_grammatical: this.searchForm.controls.summaryScoreGrammatical.value,
       time_score: this.searchForm.controls.timeScore.value,
       answer: this.abstractModel.answer,
       summary: this.abstractModel.summary,
