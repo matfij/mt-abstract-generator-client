@@ -12,7 +12,8 @@
     },
     "summaryModelEnum": {
       "DistillBartCnn": "BART (Disilled)",
-      "DistillPegasusCnn": "PEGASUS (Distilled)"
+      "DistillPegasusCnn": "PEGASUS (Distilled)",
+      "Gpt2": "GPT-2"
     }
   },
   "common": {
@@ -25,7 +26,7 @@
   "home": {
     "authorizationKey": "Authorization key *",
     "searchPhrase": "Search phrase *",
-    "searchPhraseHint": "Must be in English, preferably an open question (e.g. Is coffee healthy?)",
+    "searchPhraseHint": "Must be in English, preferably an open question (e.g. \"Is coffee healthy?\", \"Effects of smoking\")",
     "numberOfPages": "Search scale",
     "numberOfPagesHint": "Number of analyzed websites",
     "advanced": "Advanced",

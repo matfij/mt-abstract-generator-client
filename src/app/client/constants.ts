@@ -5,7 +5,8 @@ export enum AnswerModel {
 
 export enum SummaryModel {
   DistillBartCnn = 1,
-  DistillPegasusCnn = 2
+  DistillPegasusCnn = 2,
+  Gpt2
 }
 
 export enum TesterClass {

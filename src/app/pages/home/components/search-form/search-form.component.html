@@ -2,7 +2,7 @@
 
   <div class="form-group">
     <label class="form-text text-muted">{{ 'home.authorizationKey' | translate }}</label>
-    <input type="password" formControlName="key" class="form-control">
+    <input type="password" formControlName="key" class="form-control" [autocomplete]="false">
   </div>
 
   <div class="form-group">
@@ -20,26 +20,24 @@
     <small class="form-text text-muted">{{ 'home.numberOfPagesHint' | translate }}</small>
   </div>
 
-  <div class="form-group mt-4">
+  <!-- <div class="form-group mt-4">
     <mat-slide-toggle [(ngModel)]="isAdvancedChecked" [ngModelOptions]="{standalone: true}" [disabled]="searchLoading">
       <label class="form-text text-muted m-2">{{ 'home.advanced' | translate }}</label>
     </mat-slide-toggle>
-  </div>
+  </div> -->
 
   <div *ngIf="isAdvancedChecked" class="row">
     <div class="form-group col-md-6">
       <label class="form-text text-muted">{{ 'home.answerModel' | translate }}</label>
       <select class="form-control" formControlName="answerModel">
-        <option [value]="answerModelEnum[0].value">{{ answerModelEnum[0].name }}</option>
-        <option [value]="answerModelEnum[1].value">{{ answerModelEnum[1].name }}</option>
+        <option *ngFor="let model of answerModelEnum" [ngValue]="model.value">{{ model.name }}</option>
       </select>
     </div>
 
     <div class="form-group col-md-6">
       <label class="form-text text-muted">{{ 'home.summaryModel' | translate }}</label>
       <select class="form-control" formControlName="summaryModel">
-        <option [value]="summaryModelEnum[0].value">{{ summaryModelEnum[0].name }}</option>
-        <option [value]="summaryModelEnum[1].value">{{ summaryModelEnum[1].name }}</option>
+        <option *ngFor="let model of summaryModelEnum" [ngValue]="model.value">{{ model.name }}</option>
       </select>
     </div>
   </div>
