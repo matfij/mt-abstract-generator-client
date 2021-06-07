@@ -4,7 +4,7 @@ import { ApiClientService } from 'src/app/client/api-client.service';
 import { AbstractModel, PollModel } from 'src/app/client/models';
 import { GenerateAbstractParams, PollParams } from 'src/app/client/parameters';
 import { DEFAULT_SCORE, MAX_COMMENT_LENGTH, MAX_SCORE, MIN_SCORE } from 'src/app/core/config';
-import { ABSTRACT_MODEL, AUTH_KEY, GENERATE_ABSTRACT_PARAMS, POLL_PARAMS, StoreService } from 'src/app/services/store.service';
+import { ABSTRACT_MODEL, AUTH_KEY, EXECUTION_TIME, GENERATE_ABSTRACT_PARAMS, POLL_PARAMS, StoreService } from 'src/app/services/store.service';
 import { ToastStatus, UtilsService } from 'src/app/services/utils.service';
 
 @Component({
@@ -29,6 +29,7 @@ export class PollFormComponent implements OnInit {
   key: string;
   generateAbstractParams: GenerateAbstractParams;
   abstractModel: AbstractModel;
+  executionTime: number;
 
   constructor(
     private apiClient: ApiClientService,
@@ -44,6 +45,7 @@ export class PollFormComponent implements OnInit {
     this.key = this.storeService.getSimpleItem(AUTH_KEY);
     this.generateAbstractParams = this.storeService.getItem(GENERATE_ABSTRACT_PARAMS);
     this.abstractModel = this.storeService.getItem(ABSTRACT_MODEL);
+    this.executionTime = +this.storeService.getItem(EXECUTION_TIME);
 
     this.searchForm.controls.answerScoreLogical.setValue(DEFAULT_SCORE);
     this.searchForm.controls.answerScoreGrammatical.setValue(DEFAULT_SCORE);
@@ -89,6 +91,7 @@ export class PollFormComponent implements OnInit {
       summary_score_logical: this.searchForm.controls.summaryScoreLogical.value,
       summary_score_grammatical: this.searchForm.controls.summaryScoreGrammatical.value,
       time_score: this.searchForm.controls.timeScore.value,
+      execution_time: this.executionTime,
       answer: this.abstractModel.answer,
       summary: this.abstractModel.summary,
       comment: this.searchForm.controls.comment.value ? this.searchForm.controls.comment.value : ''

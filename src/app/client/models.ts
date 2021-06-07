@@ -23,6 +23,7 @@ export interface PollModel {
   summary_score_logical: number;
   summary_score_grammatical: number;
   time_score: number;
+  execution_time: number;
   answer: string;
   summary: string
   comment: string;
@@ -37,6 +38,7 @@ export interface KeyModel {
   use_count?: number;
   use_limit?: number;
   creation_date?: string;
+  last_used?: string;
 }
 
 export interface PollsStatistics {

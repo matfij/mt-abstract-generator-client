@@ -13,7 +13,8 @@
     "summaryModelEnum": {
       "DistillBartCnn": "BART (Disilled)",
       "DistillPegasusCnn": "PEGASUS (Distilled)",
-      "Gpt2": "GPT-2"
+      "Gpt2": "GPT-2",
+      "XLNet": "XLNet"
     }
   },
   "common": {
@@ -62,8 +63,9 @@
     "key": "Key",
     "active": "Active",
     "creationDate": "Creation date",
-    "testerName": "Tester name",
-    "testerClass": "Tester class",
+    "lastUsed": "Last used",
+    "testerName": "Key alias",
+    "testerClass": "Tester group",
     "useCount": "Use count",
     "useLimit": "Use limit",
     "create": "Create",
@@ -73,7 +75,7 @@
     "keyCreated": "Key created",
     "keyUpdated": "Key updated",
     "keyDeleted": "Key deleted",
-    "testerNameInvalid": "Tester name invalid",
+    "testerNameInvalid": "Key alias invalid",
     "testerClassEnum": {
       "Regular": "Regular",
       "Technical": "Technical",
@@ -88,6 +90,7 @@
     "summaryScoreLogical": "Sumary score logical",
     "summaryScoreGrammatical": "Sumary score grammatical",
     "timeScore": "Time score",
+    "executionTime": "Execution time [s]",
     "comment": "Comment",
     "details": "Details",
     "pollDeleted": "Poll deleted",

@@ -46,7 +46,7 @@ export class PollsManagementComponent implements OnInit {
   setupColumns() {
     this.columnDefs = [
       { headerName: 'admin.id', field: 'id', filter: 'agNumberColumnFilter', checkboxSelection: true, width: 100 },
-      { headerName: 'admin.key', field: 'key', width: 150 },
+      { headerName: 'admin.key', field: 'key', width: 100 },
       { headerName: 'admin.phrase', field: 'phrase', filter: true,  width: 150 },
       { headerName: 'admin.pageNumber', field: 'pageNumber', filter: true,  width: 100 },
       { headerName: 'admin.creationDate', field: 'creationDate', filter: 'agDateColumnFilter', width: 150 },
@@ -57,6 +57,7 @@ export class PollsManagementComponent implements OnInit {
       { headerName: 'admin.summaryScoreLogical', field: 'summaryScoreLogical', filter: true,  width: 100 },
       { headerName: 'admin.summaryScoreGrammatical', field: 'summaryScoreGrammatical', filter: true,  width: 100 },
       { headerName: 'admin.timeScore', field: 'timeScore', filter: 'agNumberColumnFilter', width: 100 },
+      { headerName: 'admin.executionTime', field: 'executionTime', filter: 'agNumberColumnFilter', width: 100 },
       { headerName: 'admin.comment', field: 'comment', filter: 'agNumberColumnFilter', width: 200 }
     ];
 
@@ -96,6 +97,7 @@ export class PollsManagementComponent implements OnInit {
           summaryScoreLogical: poll.summary_score_logical,
           summaryScoreGrammatical: poll.summary_score_grammatical,
           timeScore: poll.time_score,
+          executionTime: poll.execution_time,
           comment: poll.comment,
           answerModel: poll.answer_model,
           summaryModel: poll.summary_model,

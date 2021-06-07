@@ -59,9 +59,10 @@ export class KeysManagementComponent implements OnInit {
     this.columnDefs = [
       { headerName: 'admin.id', field: 'id', filter: 'agNumberColumnFilter', checkboxSelection: true, width: 100 },
       { headerName: 'admin.key', field: 'key', editable: true, width: 200 },
+      { headerName: 'admin.testerName', field: 'testerName', editable: true, width: 200 },
       { headerName: 'admin.active', field: 'active', filter: true, editable: true, width: 100 },
       { headerName: 'admin.creationDate', field: 'creationDate', filter: 'agDateColumnFilter', width: 150 },
-      { headerName: 'admin.testerName', field: 'testerName', editable: true, width: 200 },
+      { headerName: 'admin.lastUsed', field: 'lastUsed', filter: 'agDateColumnFilter', width: 150 },
       { headerName: 'admin.testerClass', field: 'testerClass', filter: true, editable: true, width: 100 },
       { headerName: 'admin.useCount', field: 'useCount', filter: 'agNumberColumnFilter', width: 100 },
       { headerName: 'admin.useLimit', field: 'useLimit', filter: 'agNumberColumnFilter', editable: true, width: 100 }
@@ -94,6 +95,7 @@ export class KeysManagementComponent implements OnInit {
           key: key.key,
           active: key.active,
           creationDate: this.datePipe.transform(key.creation_date, DATE_FORMAT),
+          lastUsed: this.datePipe.transform(key.last_used, DATE_FORMAT),
           testerName: key.tester_name,
           testerClass: key.tester_class,
           useCount: key.use_count,

@@ -18,6 +18,7 @@ export interface PollParams {
   summary_score_logical: number;
   summary_score_grammatical: number;
   time_score: number;
+  execution_time: number;
   answer: string;
   summary: string;
   comment: string;
