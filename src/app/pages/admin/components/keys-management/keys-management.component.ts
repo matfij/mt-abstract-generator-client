@@ -71,6 +71,7 @@ export class KeysManagementComponent implements OnInit {
     this.columnDefs.forEach(column => {
       column.headerName = this.translateService.instant(column.headerName);
       column.sortable = true;
+      column.editable = true;
     });
   }
 

@@ -47,15 +47,15 @@ export class PollsManagementComponent implements OnInit {
     this.columnDefs = [
       { headerName: 'admin.id', field: 'id', filter: 'agNumberColumnFilter', checkboxSelection: true, width: 100 },
       { headerName: 'admin.key', field: 'key', width: 100 },
-      { headerName: 'admin.phrase', field: 'phrase', filter: true,  width: 150 },
-      { headerName: 'admin.pageNumber', field: 'pageNumber', filter: true,  width: 100 },
+      { headerName: 'admin.phrase', field: 'phrase', filter: true, width: 150 },
+      { headerName: 'admin.pageNumber', field: 'pageNumber', filter: true, width: 100 },
       { headerName: 'admin.creationDate', field: 'creationDate', filter: 'agDateColumnFilter', width: 150 },
       // { headerName: 'admin.answerModel', field: 'answerModel', filter: true,  width: 100 },
       // { headerName: 'admin.summaryModel', field: 'summaryModel', filter: true,  width: 100 },
       { headerName: 'admin.answerScoreLogical', field: 'answerScoreLogical', width: 100 },
       { headerName: 'admin.answerScoreGrammatical', field: 'answerScoreGrammatical', width: 100 },
-      { headerName: 'admin.summaryScoreLogical', field: 'summaryScoreLogical', filter: true,  width: 100 },
-      { headerName: 'admin.summaryScoreGrammatical', field: 'summaryScoreGrammatical', filter: true,  width: 100 },
+      { headerName: 'admin.summaryScoreLogical', field: 'summaryScoreLogical', filter: true, width: 100 },
+      { headerName: 'admin.summaryScoreGrammatical', field: 'summaryScoreGrammatical', filter: true, width: 100 },
       { headerName: 'admin.timeScore', field: 'timeScore', filter: 'agNumberColumnFilter', width: 100 },
       { headerName: 'admin.executionTime', field: 'executionTime', filter: 'agNumberColumnFilter', width: 100 },
       { headerName: 'admin.comment', field: 'comment', filter: 'agNumberColumnFilter', width: 200 }
@@ -63,8 +63,9 @@ export class PollsManagementComponent implements OnInit {
 
     this.columnDefs.forEach(column => {
       column.headerName = this.translateService.instant(column.headerName);
-      column.sortable = true;
       column.resizable = true;
+      column.sortable = true;
+      column.editable = true;
     });
   }
 
