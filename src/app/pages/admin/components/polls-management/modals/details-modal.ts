@@ -5,13 +5,13 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'dialog-data-example-dialog',
   template: `
-  <h3 mat-dialog-title>
-    {{ ('admin.phrase' | translate) + ': ' + poll.phrase }}
-  </h3>
-
   <div mat-dialog-content>
     <table class="table table-dark">
       <tbody>
+        <tr>
+          <td>{{ 'home.topic' | translate }}</td>
+          <td class="text-justify">{{ poll.phrase }}</td>
+        </tr>
         <tr>
           <td>{{ 'home.answer' | translate }}</td>
           <td class="text-justify">{{ poll.answer }}</td>
